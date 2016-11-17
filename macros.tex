@@ -1,0 +1,42 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily,
+  numberstyle=\footnotesize,
+  numbers=left,
+  breaklines=true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+%commands and environments
+\fvset{frame=single,framesep=1mm,fontfamily=courier,fontsize=\scriptsize,numbers=left,framerule=.3mm,numbersep=1mm,commandchars=\\\{\}}
+\newcommand{\code}[1]{\emph{#1}}
+
+%tabular header heights
+\newcommand\Tstrut{\rule{0pt}{3ex}}
+\newcommand\Bstrut{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\TBstrut}{\Tstrut\Bstrut}
+
+\newenvironment{italicquotes}
+{\begin{quote}\itshape}
+{\end{quote}}
+
+\newcommand{\HRule}{\textcolor{sangria}{\rule{\linewidth}{0.7mm}}}
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}\left(#1\right)}}

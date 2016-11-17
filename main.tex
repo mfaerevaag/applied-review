@@ -1,14 +1,85 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
 
-\title{02232 Applied - Review}
-\author{Markus }
-\date{November 2016}
+\documentclass[11pt]{article}
+
+% packages
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage[rmargin=3cm, tmargin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{color,soul}
+\usepackage{fancyvrb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage[charter]{mathdesign}
+\usepackage{wallpaper}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage[bottom]{footmisc}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{float}
+\usepackage{todonotes}
+%\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage[ddmmyyyy]{datetime}
+
+% constants
+\newcommand{\COURSE}{02239: Applied Cryptography}
+\newcommand{\TITLE}{Peer Review}
+\newcommand{\DATE}{Fall 2016}
+
+% formating
+\onehalfspacing{}
+%% toc
+\setcounter{secnumdepth}{3} % only chapter and sections will be numbered
+\setcounter{tocdepth}{3}    % entries down to \subsubsections in the TOC
+\addto\captionsamerican{\renewcommand{\contentsname}{Table of Contents}}
+% heading and document layout stuff
+% \titleformat{\chapter}{\normalfont\LARGE\bfseries\color{black}}{\thechapter.}{1em}{}
+
+\input{macros}
+
+% headers
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{25pt}
+\lhead{\TITLE}
+\chead{}
+\rhead{\leftmark}
+\cfoot{Page \thepage{} of~\pageref{LastPage}}
+
 
 \begin{document}
+\input{sections/front}
+\clearpage
 
-\maketitle
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+\setcounter{page}{1}
 
 \section{Introduction}
+\label{sec:intro}
+\input{sections/intro}
+\clearpage
+
 
 \end{document}
