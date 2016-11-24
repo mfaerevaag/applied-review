@@ -1,10 +1,15 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
+
 \section{Group 2 - Sensor networks}
 
 Our assessment of this report and the proposed solution is going to focus on the project goals, and how they are presented in this report.
-Overall, we feel the report is well-written, concise and properly researched. We like the fact that the group adequately considered which cryptographic primitives are suitable in a lightweight environment, which is one of the main goals in this project, but we also note the missing link between any existing solutions and the final solution presented in the report. 
+Overall, we feel the report is well-written, concise and properly researched. We like the fact that the group adequately considered which cryptographic primitives are suitable in a lightweight environment, which is one of the main goals in this project, but we also note the missing link between any existing solutions and the final solution presented in the report.
 The risk analysis and threat-modeling works really well with the OCTAVE Allegro method.
 
-\\We are going to review the following points, as described in the project definitions:
+We are going to review the following points, as described in the project definitions:
 \\- Risk analysis
 \\- Threat model
 \\- Comparison to existing solutions
@@ -24,7 +29,7 @@ With regards to PRESENT, we note that the report wrongfully states that no full-
 - Biclique cryptanalysis of PRESENT-80 and PRESENT-128.\\ https://pdfs.semanticscholar.org/c8e3/54aa09de1924e383caea2371585ab990d72e.pdf
 
 We also question whether PRESENT is the ideal choice for this problem, given that we were unable to find any example of other existing solutions to sensor-network security is employing this particular protocol, and the authors were unable to cite any existing solutions using it either.\\
-We note that the authors cite a benchmark of lightweight ciphers by Cazorla, Marquet and Minier, which more or less concludes that LED is better suited for this purpose, by using their metric of "code size × cycle count product/block size".\\
+We note that the authors cite a benchmark of lightweight ciphers by Cazorla, Marquet and Minier, which more or less concludes that LED is better suited for this purpose, by using their metric of "code size $\times$ cycle count product/block size".\\
 https://eprint.iacr.org/2013/295.pdf \\
 The reference paper for LED also contains many interesting comparisons between the two protocols, and also suggests that LED might be more suited than PRESENT in many aspects.\\
 https://eprint.iacr.org/2012/600.pdf \\
