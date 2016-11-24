@@ -1,8 +1,8 @@
 \section{Group 2 - Sensor networks}
 
 Our assessment of this report and the proposed solution is going to focus on the project goals, and how they are presented in this report.
-Overall, we feel the report is well-written, concise and properly researched. We like the fact that the group adequately considered which cryptographic primitives are suitable in a lightweight enviroment, which is possibly one of the main goals in this project. We also like
-As we do not have in-depth knowledge of any existing solutions to this problem, nor the resources to research these fully, we will briefly compare the alternative solutions presented in their paper.\\
+Overall, we feel the report is well-written, concise and properly researched. We like the fact that the group adequately considered which cryptographic primitives are suitable in a lightweight environment, which is one of the main goals in this project, but we also note the missing link between any existing solutions and the final solution presented in the report. 
+The risk analysis and threat-modeling works really well with the OCTAVE Allegro method.
 
 \\We are going to review the following points, as described in the project definitions:
 \\- Risk analysis
@@ -10,3 +10,23 @@ As we do not have in-depth knowledge of any existing solutions to this problem, 
 \\- Comparison to existing solutions
 \\- System security
 
+Risk Analysis:\\
+
+Threat Model:\\
+
+Existing Solutions:\\
+The report does not contain any direct comparison to full-featured solutions for sensor-based network security. Instead, the report focuses on choosing the most appropriate cryptographic primitives to be used for communication and key-exchange. We feel like this is more of a benchmark on lightweight cryptographic ciphers, instead of researching some of the existing full-featured solutions.
+It would be very obvious to mention "SPINS: Security Protocols for Sensor Networks":\\
+https://www.csee.umbc.edu/courses/graduate/CMSC691A/Spring04/papers/spins-wine-journal.pdf
+\\This paper is by far the most cited on Google Scholar, concerning sensor network security, and contains a full protocol suite for solving security in sensor-networks with focus on minimal hardware and low power consumption.\\
+
+With regards to PRESENT, we note that the report wrongfully states that no full-round attacks on PRESENT have been discovered, which was one of the reasons for selection the cipher in the solutions. However, we found that a full-round attacks does in fact exist on PRESENT:
+- Biclique cryptanalysis of PRESENT-80 and PRESENT-128.\\ https://pdfs.semanticscholar.org/c8e3/54aa09de1924e383caea2371585ab990d72e.pdf
+
+We also question whether PRESENT is the ideal choice for this problem, given that we were unable to find any example of other existing solutions to sensor-network security is employing this particular protocol, and the authors were unable to cite any existing solutions using it either.\\
+We note that the authors cite a benchmark of lightweight ciphers by Cazorla, Marquet and Minier, which more or less concludes that LED is better suited for this purpose, by using their metric of "code size × cycle count product/block size".\\
+https://eprint.iacr.org/2013/295.pdf \\
+The reference paper for LED also contains many interesting comparisons between the two protocols, and also suggests that LED might be more suited than PRESENT in many aspects.\\
+https://eprint.iacr.org/2012/600.pdf \\
+
+At the very least, we would have liked the authors to have considered LED.\\
