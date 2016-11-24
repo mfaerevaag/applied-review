@@ -1,22 +1,56 @@
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../main"
+%%% TeX-master: "../../main"
 %%% End:
-
-\subsection{Proposed solution}
 
 % pre set seeds
 % - extract from camera
 % - extract all from server
 
 The first part of the system we would like to review is the encryption
-of the video stream. We will look at this process i two steps; video
-stream from camera to server and server to storage.
+of the video stream~\cite[sec. 3]{8}. We will look at this process i
+two steps; the video stream from camera to server and the transfer
+from server to storage.
 
-The current system distributes
+\subsubsection{Proposed solution}
+
+As explained in the report, the current system distributes a preset
+seeds to cameras upon setup~\cite[sec. 3.2.4]{8}. Each camera gets an
+identical seed to avoid collision.
+
+The report states, ``physical attacks on the camera are not
+considered''~\cite[p. 2]{8}, but we would still like consider how the
+physical equipment could be tampered with. More specifically, if the
+preset encryption seed could be extracted.
+
+If the preset seed of each camera could be extracted and used by an
+passive or active adversary. In the case of a passive adversary, all
+transmissions could be intercepted. In latter case, an active
+adversary could perform Man in the Middle (MITM) attacks, as he or she
+could also forge new transmissions.
+
+Having pointed this out, there are still risk with such preset seeds
+without requiring physical tampering with the equipment. Another
+option is to compromise the server itself. As the report states, the
+server has the unique seeds to all cameras stored, so it can decrypt
+their data~\cite[p. 8]{8}. If the server was compromised, an adversary
+could do passive and active attacks on the video streams of \emph{all}
+cameras. Again, it does not only compromise the confidentiality of the
+data, but the integrity. For instance, fake evidence material could be
+planted etc.
 
 
-\subsection{Alternative}
+\subsubsection{Alternative}
+
+The report discusses if the video streams should be stored directly,
+assuming the encryption is strong enough, or if the data should be
+re-encrypted. Having discussed the effects of compromised hardware or
+server in the previous section, we would like to propose an
+alternative solution making said attack impossible.
+
+If the server is compromised it would not matter if the data is stored
+directly or re-encrypted, because the data could be respectively
+decrypted or intercepted before re-encryption.
 
 % tls encryption instead puzzle
 % - stardard, tried and true
